@@ -1,5 +1,5 @@
 Public Class AccountCheck{
-//These comments are posted to GIT
+//These Vamsi comments are posted to GIT
 Public Static Void AccountDuplicate(List<Account> acList)
 {
 
