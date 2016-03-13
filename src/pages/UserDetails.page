@@ -1,0 +1,42 @@
+<apex:page controller="UsrLst">
+ <apex:form > 
+  <h1>User Details</h1>&nbsp;&nbsp;
+  <apex:pageblock >
+ <apex:inputText value="{!userinput}"/>
+ <apex:commandButton value="Submit" reRender="va,sr,sr1" action="{!getUserDetails}"/>
+ </apex:pageblock>
+ <apex:pageBlock >
+ 
+ <apex:pageBlockSection title="User Details" columns="1">
+ <apex:pageblockTable value="{!UsrLst2}" var="v" id="sr" >
+ <apex:column headervalue="UserId" value="{!v.Id}"/>
+ <apex:column headervalue="UserName" value="{!v.Name}"/>
+ <apex:column headervalue="User Title" value="{!v.Title}"/>
+ <apex:column headervalue="User RoleName" value="{!v.UserRole.name}"/>
+ </apex:pageblockTable>
+ </apex:pageBlockSection>
+ 
+ <apex:pageBlockSection title="Manager Details" columns="1">
+ <apex:pageblockTable value="{!UsrLst2}" var="v" id="sr1" >
+ <apex:column headervalue="User Mngr Id" value="{!v.Manager.Id}"/>
+ <apex:column headervalue="Usr Mngr Name" value="{!v.manager.Name}"/>
+ <apex:column headervalue="Usr Mnr Role" value="{!v.manager.Userrole.Name}"/>
+ <apex:column headervalue="Usr Mnr Role Id" value="{!v.manager.Userrole.id}"/>
+ </apex:pageblockTable>
+ </apex:pageBlockSection>
+ 
+ <apex:pageBlockSection title="Snr Manager Details" columns="1">
+ <apex:pageblockTable value="{!mngrlst}" var="s" id="va">
+ <apex:column headervalue="Snr Mngr Name" value="{!s.Manager.Name}"/>
+ <apex:column headervalue="Snr Mngr Role" value="{!s.Manager.UserRole.name}"/>
+ <apex:column headervalue="Snr Mngr RId" value="{!s.Manager.UserRole.Id}"/>
+ <apex:column headervalue="MngrRole-SnrMngrRole" value="{!matched}"/>
+ </apex:pageBlockTable>
+ </apex:pageBlockSection>
+
+ </apex:pageBlock>
+ 
+ 
+ 
+  </apex:form>
+</apex:page>

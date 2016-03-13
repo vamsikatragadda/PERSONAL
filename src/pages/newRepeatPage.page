@@ -1,0 +1,16 @@
+<apex:page showHeader="false" sidebar="false" standardController="Account" >
+<script type="text/javascript">
+function showmessage(){
+ alert("This is my Talent "+ "{!account.Name}");
+ }
+</script> 
+<apex:form >
+
+<apex:repeat var="repeat" value="{!Account}">
+<apex:outputField value="{!Account.Name}" /> <br></br><br></br>
+<apex:commandButton onclick="showmessage();" value="Click Me!" />
+
+</apex:repeat>
+
+</apex:form> 
+</apex:page>

@@ -1,0 +1,19 @@
+<apex:page standardController="Opportunity" >
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockButtons >
+<apex:commandButton action="{!save}" value="Save"/>
+<apex:commandButton action="{!Cancel}" value="Cancel"/>
+</apex:pageBlockButtons>
+<apex:pageblockSection title="Create an Oppurtunity" columns="3">
+<apex:inputField value="{!opportunity.Name}"/>
+<apex:inputField value="{!opportunity.StageName}"/>
+<apex:inputField value="{!opportunity.CloseDate}"/>
+<apex:pageblockSectionItem >
+<apex:inputCheckbox title="Private?" value="{!opportunity.isprivate}"/>
+
+</apex:pageblockSectionItem>
+</apex:pageblockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

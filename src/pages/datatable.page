@@ -1,0 +1,17 @@
+<apex:page controller="Sample1234">
+<style type="text/css">
+    .empty-column-content {
+        display: vamsi;
+    }
+</style>
+    <apex:pageBlock >
+        <apex:pageblockTable value="{!oppList}" var="a">
+        <apex:column value="{!a.Name}"/>
+        <apex:repeat value="{!a.Contacts}" var="c">
+        <apex:column >
+        <apex:outputField value="{!c.name}" styleClass="empty-column-content"/>
+        </apex:column>
+        </apex:repeat>           
+        </apex:pageblockTable>
+    </apex:pageBlock>
+</apex:page>
